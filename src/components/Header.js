@@ -1,15 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
   return (
     <HeaderContainer>
       <Wrapper>
-        <Logo>Birgitta Ryås</Logo>
+        <Link to="/"><Logo>Birgitta Ryås</Logo></Link>
         <nav>
-            <Link href="#">Galleri</Link>
-            <Link href="#">Kontakt</Link>
-            <Link href="#">Om mig</Link>
+            <HeaderLink href="#">Galleri</HeaderLink>
+            <HeaderLink href="#">Kontakt</HeaderLink>
+            <HeaderLink href="#">Om mig</HeaderLink>
         </nav>
       </Wrapper>
     </HeaderContainer>
@@ -37,10 +38,12 @@ background-color: #f5f5f5;
 
 const Logo = styled.h2`
 margin:0;
+text-decoration: none;
 `
 
-const Link = styled.a`
+const HeaderLink = styled.a`
 margin:5px;
 text-decoration: none;
 color: black;
 `
+

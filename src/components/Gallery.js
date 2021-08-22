@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import {Link} from 'react-router-dom'
 
 // const imageArr = [1,2,3,4,5,6]
 
@@ -10,30 +11,30 @@ const imageArrD = [
   { title: 'Hjortron',
     source: 'images/paintings/hjortron.jpg',
     id: 2 },
-  { title: 'Hjortron',
+  { title: 'Hjortrondelikatess',
     source: 'images/paintings/delikatess.jpg',
-    id: 2 },
-    { title: 'Hav',
-    source: 'images/paintings/bat.jpg',
     id: 3 },
-  { title: 'Båt',
+    { title: 'Båt',
+    source: 'images/paintings/bat.jpg',
+    id: 4 },
+  { title: 'Hav',
     source: 'images/paintings/hav_2.jpg',
-    id: 4 },
-  { title: 'Båt',
+    id: 5 },
+  { title: 'Skinnarviksparken',
     source: 'images/paintings/skinnarviksparken.jpg',
-    id: 4 },
+    id: 6 },
     { title: 'Glänta',
     source: 'images/paintings/glanta.jpg',
-    id: 5 },
+    id: 7 },
   { title: 'Måla',
     source: 'images/paintings/mala.jpg',
-    id: 6 },
-    { title: 'Måla',
+    id: 8 },
+    { title: 'Hjortronhink',
     source: 'images/paintings/hjortronhink.jpg',
-    id: 6 },
-    { title: 'Måla',
+    id: 9 },
+    { title: 'Viken',
     source: 'images/paintings/vik.jpg',
-    id: 6 }
+    id: 10 }
 ]
 
 const imageArrA = [
@@ -77,7 +78,10 @@ export const Gallery = () => {
     <Container>
         <FirstRow>
       {imageArrD.map((item) => (
+        // <PaintingContainer></PaintingContainer>
+        <Link to={`paintings/${item.id}`}>
           <Painting src={item.source} alt={item.source}/>
+          </Link>
       ))}</FirstRow>
       {/* <FirstRow>
       {imageArrB.map((item) => (
@@ -125,5 +129,5 @@ max-width:100%;
 max-height: 440px;
 object-fit: cover;
 padding:0;
-margin: 5px;
+margin: 15px;
 `
