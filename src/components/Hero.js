@@ -13,7 +13,19 @@ export const Hero = ()  => {
         </Container>
     );
 }
-
+const Container = styled.div`
+width: 70%;
+position: relative;
+display: flex;
+justify-content: flex-end;
+align-items: center;
+height: 800px;
+margin-bottom: 20px;
+`
+const TitleContainer = styled.div`
+width: 93%;
+z-index:1;
+`
 const Title = styled.h1`
 font-size: 90px;
 font-weight: lighter;
@@ -24,18 +36,7 @@ font-size: 60px;
 font-weight: bold;
 margin: 10px;`
 
-const Container = styled.div`
-width: 100%;
-position: relative;
-display: flex;
-justify-content: flex-end;
-align-items: center;
-height: 600px;
-`
-const TitleContainer = styled.div`
-width: 80%;
-z-index:1;
-`
+
 
 const ImageContainer = styled.div`
 position: absolute;
@@ -52,8 +53,8 @@ const HeroImage = styled.img`
 position: absolute;
 top:0;
 right:0;
-width: 60%;
-height: 600px;
+width: 66%;
+height: 800px;
 background-color:lightblue;
 z-index:0;
 object-fit: cover;

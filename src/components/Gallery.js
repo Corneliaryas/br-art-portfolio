@@ -3,13 +3,49 @@ import styled from 'styled-components'
 
 // const imageArr = [1,2,3,4,5,6]
 
+const imageArrD = [
+  { title: 'Hav',
+    source: 'images/paintings/hav.jpg',
+    id: 1 },
+  { title: 'Hjortron',
+    source: 'images/paintings/hjortron.jpg',
+    id: 2 },
+  { title: 'Hjortron',
+    source: 'images/paintings/delikatess.jpg',
+    id: 2 },
+    { title: 'Hav',
+    source: 'images/paintings/bat.jpg',
+    id: 3 },
+  { title: 'Båt',
+    source: 'images/paintings/hav_2.jpg',
+    id: 4 },
+  { title: 'Båt',
+    source: 'images/paintings/skinnarviksparken.jpg',
+    id: 4 },
+    { title: 'Glänta',
+    source: 'images/paintings/glanta.jpg',
+    id: 5 },
+  { title: 'Måla',
+    source: 'images/paintings/mala.jpg',
+    id: 6 },
+    { title: 'Måla',
+    source: 'images/paintings/hjortronhink.jpg',
+    id: 6 },
+    { title: 'Måla',
+    source: 'images/paintings/vik.jpg',
+    id: 6 }
+]
+
 const imageArrA = [
   { title: 'Hav',
     source: 'images/paintings/hav.jpg',
     id: 1 },
   { title: 'Hjortron',
     source: 'images/paintings/hjortron.jpg',
-    id: 2 }
+    id: 2 },
+  { title: 'Hjortron',
+    source: 'images/paintings/delikatess.jpg',
+    id: 2 },
 ]
 
 const imageArrB = [
@@ -19,6 +55,9 @@ const imageArrB = [
     { title: 'Båt',
       source: 'images/paintings/hav_2.jpg',
       id: 4 },
+    { title: 'Båt',
+      source: 'images/paintings/skinnarviksparken.jpg',
+      id: 4 },
   ]
 
   const imageArrC = [
@@ -27,6 +66,9 @@ const imageArrB = [
       id: 5 },
     { title: 'Måla',
       source: 'images/paintings/mala.jpg',
+      id: 6 },
+      { title: 'Måla',
+      source: 'images/paintings/hjortronhink.jpg',
       id: 6 }
   ]
 
@@ -34,34 +76,33 @@ export const Gallery = () => {
   return (
     <Container>
         <FirstRow>
-      {imageArrA.map((item) => (
-        <PaintingContainer key={item.id}>
+      {imageArrD.map((item) => (
           <Painting src={item.source} alt={item.source}/>
-          {/* <p>{item.title}</p> */}
-        </PaintingContainer>
       ))}</FirstRow>
-      <FirstRow>
+      {/* <FirstRow>
       {imageArrB.map((item) => (
         <PaintingContainer key={item.id}>
           <Painting src={item.source} alt={item.source}/>
-          {/* <p>{item.title}</p> */}
+          { <p>{item.title}</p>}
         </PaintingContainer>
       ))}</FirstRow>
       <FirstRow>
       {imageArrC.map((item) => (
         <PaintingContainer key={item.id}>
           <Painting src={item.source} alt={item.source}/>
-          {/* <p>{item.title}</p> */}
+          { <p>{item.title}</p>}
         </PaintingContainer>
-      ))}</FirstRow>
+      ))}</FirstRow> */}
     </Container>
   )
 }
 
 const FirstRow = styled.div`
-width: 32%;
+width: 100%;
+/* max-height: 440px; */
 display: flex;
-flex-direction: column;
+flex-wrap: wrap;
+/* flex-direction: row; */
 background-color: #fafafa;
 `
 
@@ -73,14 +114,16 @@ justify-content: space-evenly;
 background-color: #fafafa;
 `
 const PaintingContainer = styled.div`
-width: 100%;
+/* max-width: 32%; */
+height: 440px;
 margin: 5px;
 padding: 0;
 `
 const Painting = styled.img`
-width:100%;
-max-height: 400px;
+flex: 1 1 80px;
+max-width:100%; 
+max-height: 440px;
 object-fit: cover;
 padding:0;
-margin: 0;
+margin: 5px;
 `
