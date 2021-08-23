@@ -24,14 +24,20 @@ export const Details = () => {
             <Image src={`../${painting[0].source}`}/>
             <Info>
                 <Title>
-                    {paintingID}
                      {painting[0].title}
                 </Title>
+                <Paragraph>
+                    Lite info om målningen här då, kanske teknik, tankar etc. Lite info om målningen här då, kanske teknik, tankar etc. Lite info om målningen här då, kanske teknik, tankar etc.
+                    Lite info om målningen här då, kanske teknik, tankar etc.
+                </Paragraph>
+                <Paragraph>
+                    Lite info om målningen här då, kanske teknik, tankar etc. Lite info om målningen här då, kanske teknik, tankar etc. 
+                </Paragraph>
                 <Price>
                     1200 kr
                 </Price>
                 <Paragraph>
-                    Lite info om målningen här då, kanske teknik, tankar etc.
+                    Lägg beställning
                 </Paragraph>
             </Info></>}
         </Container>
@@ -39,12 +45,28 @@ export const Details = () => {
 } 
 
 const Container = styled.section`
+display: flex;
+width: 70%;
+padding: 20px;
 `
 
 const Image = styled.img`
-width:50%;
+max-width:700px;
+max-height: 700px;
 `
-const Info = styled.div``
-const Title = styled.h2``
-const Price = styled.p``
-const Paragraph = styled.p``
+const Info = styled.div`
+margin: 0 20px;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;`
+
+const Title = styled.h2`
+font-size: 24px;
+font-family: 'Kalam', cursive;`
+
+const Price = styled.p`
+font-weight: bold;
+font-size: 24px;
+`
+const Paragraph = styled.p`
+margin: 5px 0; `

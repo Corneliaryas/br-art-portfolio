@@ -6,7 +6,7 @@ export const Header = () => {
   return (
     <HeaderContainer>
       <Wrapper>
-        <Link to="/"><Logo>Birgitta Ryås</Logo></Link>
+        <StyledLink to="/">Birgitta Ryås</StyledLink>
         <nav>
             <HeaderLink href="#">Galleri</HeaderLink>
             <HeaderLink href="#">Kontakt</HeaderLink>
@@ -36,9 +36,12 @@ align-items: center;
 background-color: #f5f5f5;
 `
 
-const Logo = styled.h2`
+const StyledLink = styled(Link)`
 margin:0;
 text-decoration: none;
+font-weight: bold;
+font-size: 20px;
+color: black;
 `
 
 const HeaderLink = styled.a`

@@ -27,14 +27,17 @@ width: 93%;
 z-index:1;
 `
 const Title = styled.h1`
-font-size: 90px;
-font-weight: lighter;
-margin: 10px;`
+font-size: 120px;
+font-weight: 200;
+margin: 5px;
+`
 
 const Sub = styled.h2`
-font-size: 60px;
-font-weight: bold;
-margin: 10px;`
+font-size: 80px;
+font-weight: 400;
+margin: 5px;
+font-family: 'Kalam', cursive;
+`
 
 
 
