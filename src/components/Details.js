@@ -15,7 +15,7 @@ export const Details = () => {
     }, [paintingID])
 
     console.log(paintings)
-    const painting = paintings ? paintings.filter(item => item.id == paintingID) : "nope";
+    const painting = paintings ? paintings.filter(item => item.id === paintingID) : "nope";
     console.log(painting)
     return(
         <Container>

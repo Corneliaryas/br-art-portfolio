@@ -39,19 +39,6 @@ margin: 5px;
 font-family: 'Kalam', cursive;
 `
 
-
-
-const ImageContainer = styled.div`
-position: absolute;
-top:0;
-right:0;
-width: 60%;
-height: 600px;
-background-color:lightblue;
-z-index:0;
-object-fit: contain;
-overflow: hidden;
-`
 const HeroImage = styled.img`
 position: absolute;
 top:0;
