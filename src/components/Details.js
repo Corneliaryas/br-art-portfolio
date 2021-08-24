@@ -48,17 +48,28 @@ const Container = styled.section`
 display: flex;
 width: 70%;
 padding: 20px;
+@media screen and (max-width: 768px) {
+  width: 90%;
+  flex-direction: column;
+  }
 `
 
 const Image = styled.img`
-max-width:700px;
+max-width: 700px;
 max-height: 700px;
+@media screen and (max-width: 768px) {
+  width: 100%;
+  height: 100%;
+  }
 `
 const Info = styled.div`
 margin: 0 20px;
 display: flex;
 flex-direction: column;
-justify-content: flex-end;`
+justify-content: flex-end;
+@media screen and (max-width: 768px) {
+  margin: 0 10px;
+  }`
 
 const Title = styled.h2`
 font-size: 24px;
