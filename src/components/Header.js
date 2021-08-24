@@ -1,17 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+
+import { HamburgerMenu } from './HamburgerMenu';
 
 export const Header = () => {
   return (
     <HeaderContainer>
       <Wrapper>
         <StyledLink to="/">Birgitta Ryås</StyledLink>
-        <nav>
-            <HeaderLink href="#">Galleri</HeaderLink>
-            <HeaderLink href="#">Kontakt</HeaderLink>
-            <HeaderLink href="#">Om mig</HeaderLink>
-        </nav>
+        <NavContainer>
+            <HeaderLink to="/">Galleri</HeaderLink>
+            <HeaderLink to="/">Kontakt</HeaderLink>
+            <HeaderLink to="/">Om mig</HeaderLink>
+        </NavContainer>
+        <HamburgerMenu />
       </Wrapper>
     </HeaderContainer>
   );
@@ -34,6 +37,9 @@ flex-direction: row;
 justify-content: space-between;
 align-items: center;
 background-color: #f5f5f5;
+@media screen and (max-width: 768px) {
+    width: 90%;
+  }
 `
 
 const StyledLink = styled(Link)`
@@ -44,7 +50,14 @@ font-size: 20px;
 color: black;
 `
 
-const HeaderLink = styled.a`
+const NavContainer = styled.nav`
+
+@media screen and (max-width: 768px) {
+  display: none;
+  }
+`
+
+const HeaderLink = styled(NavLink)`
 margin:5px;
 text-decoration: none;
 color: black;

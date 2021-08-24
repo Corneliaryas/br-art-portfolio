@@ -69,6 +69,9 @@ display: flex;
 /* flex-wrap: wrap; */
 justify-content: space-evenly;
 background-color: #fafafa;
+@media screen and (max-width: 768px) {
+    width:90%;
+  }
 `
 const FirstRow = styled.div`
 width: 100%;
@@ -77,14 +80,28 @@ display: flex;
 flex-wrap: wrap;
 flex-direction: row;
 background-color: #fafafa;
+@media screen and (max-width: 768px) {
+  flex-wrap: nowrap;
+  flex-direction: column;
+  /* background-color: red; */
+  }
 `
 const PaintingLink = styled(Link)`
 flex: 1 1 180px;
 margin: 5px;
+@media screen and (max-width: 768px) {
+    width:100%;
+    flex: none;
+    margin: 5px 0;
+  }
 `
 const Painting = styled.img`
 min-width: 100%; 
 max-height: 440px;
 padding:0;
 object-fit: cover;
+@media screen and (max-width: 768px) {
+    width:100%;
+    max-height: 100%;
+  }
 `
