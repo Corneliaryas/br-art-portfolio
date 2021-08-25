@@ -21,6 +21,7 @@ export const Header = () => {
 }
 
 const HeaderContainer = styled.header`
+position: relative;
 width: 100%;
 height: 60px;
 display: flex;
