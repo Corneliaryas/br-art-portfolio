@@ -36,6 +36,7 @@ padding: 20px;
 @media screen and (max-width: 768px) {
   width: 90%;
   flex-direction: column;
+  align-items: center;
   }
 `
 
@@ -43,11 +44,14 @@ const Image = styled.img`
 width: 700px;
 height: 700px;
 background-color: #ddd;
+margin: 10px;
 /* max-width: 700px;
 max-height: 700px; */
 @media screen and (max-width: 768px) {
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
+  width: 80vw;
+  height: 400px;
   }
 `
 const Info = styled.div`
@@ -65,7 +69,10 @@ const Title = styled.h2`
 font-size: 120px;
 font-weight: 200;
 margin: 20px 0;
-margin-bottom: 30px;`
+margin-bottom: 30px;
+@media screen and (max-width: 768px) {
+    font-size: 90px;
+  }`
 
 // const Title2 = styled.h2`
 // position: absolute;
