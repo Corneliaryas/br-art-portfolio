@@ -14,8 +14,8 @@
     { "title": "Hav",
       "source": "images/paintings/hav_2.jpg",
       "id": 5 },
-    { "title": "'Skinnarviksparken'",
-      "source": "'images/paintings/skinnarviksparken.jpg'",
+    { "title": "Skinnarviksparken",
+      "source": "images/paintings/skinnarviksparken.jpg",
       "id": 6 },
     { "title": "Glänta",
       "source": "images/paintings/glanta.jpg",
@@ -24,10 +24,10 @@
       "source": "images/paintings/mala.jpg",
       "id": 8 },
     { "title": "Hjortronhink",
-      "source": "'images/paintings/hjortronhink.jpg'",
+      "source": "images/paintings/hjortronhink.jpg",
       "id": 9 },
     { "title": "Viken",
-      "source": "'images/paintings/vik.jpg'",
+      "source": "images/paintings/vik.jpg",
       "id": 10 }
   ]
   

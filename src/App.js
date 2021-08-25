@@ -9,6 +9,8 @@ import {
 import {Header} from 'components/Header'
 import {Start} from 'components/Start'
 import {Details} from 'components/Details'
+import { About } from 'components/About'
+import { Contact } from 'components/Contact'
 
 export const App = () => {
   return (
@@ -18,6 +20,12 @@ export const App = () => {
       <Switch>
         <Route path="/paintings/:paintingID" exact>
           <Details />
+        </Route>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/contact">
+          <Contact />
         </Route>
         <Route path="/">
           <Start />

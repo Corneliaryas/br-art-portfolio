@@ -63,6 +63,7 @@ max-height: 700px;
   }
 `
 const Info = styled.div`
+max-width: 700px;
 margin: 0 20px;
 display: flex;
 flex-direction: column;

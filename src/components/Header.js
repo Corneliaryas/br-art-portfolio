@@ -11,8 +11,8 @@ export const Header = () => {
         <StyledLink to="/">Birgitta Ryås</StyledLink>
         <NavContainer>
             <HeaderLink to="/">Galleri</HeaderLink>
-            <HeaderLink to="/">Kontakt</HeaderLink>
-            <HeaderLink to="/">Om mig</HeaderLink>
+            <HeaderLink to="/contact">Kontakt</HeaderLink>
+            <HeaderLink to="/about">Om mig</HeaderLink>
         </NavContainer>
         <HamburgerMenu />
       </Wrapper>
@@ -61,5 +61,6 @@ const HeaderLink = styled(NavLink)`
 margin:5px;
 text-decoration: none;
 color: black;
+font-weight: bold;
 `
 
