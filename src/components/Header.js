@@ -1,20 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Link, NavLink } from 'react-router-dom';
 
 import { HamburgerMenu } from './HamburgerMenu';
 
 export const Header = () => {
+  const [showMenu, setShowMenu] = useState(false);
   return (
     <HeaderContainer>
       <Wrapper>
-        <StyledLink to="/">Birgitta Ryås</StyledLink>
-        <NavContainer>
-            <HeaderLink to="/">Galleri</HeaderLink>
-            <HeaderLink to="/contact">Kontakt</HeaderLink>
-            <HeaderLink to="/about">Om mig</HeaderLink>
+        <StyledLink to="/" onClick={() => setShowMenu(false)}>Birgitta Ryås</StyledLink>
+        <NavContainer active={showMenu}>
+            <HeaderLink to="/" onClick={() => setShowMenu(false)}>Galleri</HeaderLink>
+            <HeaderLink to="/contact" onClick={() => setShowMenu(false)}>Kontakt</HeaderLink>
+            <HeaderLink to="/about" onClick={() => setShowMenu(false)}>Om mig</HeaderLink>
         </NavContainer>
-        <HamburgerMenu />
+        <HamburgerMenu showMenu={showMenu} setShowMenu={setShowMenu}/>
       </Wrapper>
     </HeaderContainer>
   );
@@ -54,8 +55,19 @@ color: black;
 const NavContainer = styled.nav`
 
 @media screen and (max-width: 768px) {
-  display: none;
-  }
+display: ${(props) => (props.active === true ? "flex" : "none")};
+position: absolute;
+top: 60px;
+left:0;
+flex-direction: column;
+align-items: center;
+width: 100%;
+height: 100vh;
+z-index: 2;
+background-color: #f5f5f5;
+margin: 0;
+padding 0;
+}
 `
 
 const HeaderLink = styled(NavLink)`
@@ -63,5 +75,12 @@ margin:5px;
 text-decoration: none;
 color: black;
 font-weight: bold;
+@media screen and (max-width: 768px) {
+margin:20px;
+text-decoration: none;
+color: black;
+font-weight: bold;
+font-size: 20px;
+}
 `
 
