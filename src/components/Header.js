@@ -1,6 +1,6 @@
-import React, { forwardRef, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { NavHashLink } from 'react-router-hash-link';
 // use it just like a RRv4/5 <NavLink> (see RRv4/5 api for details)
 // it will be active only if both the path and hash fragment match

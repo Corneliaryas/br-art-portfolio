@@ -36,7 +36,7 @@ const imageArrD = [
 ]
 
 
-export const Gallery = forwardRef(({}, ref) => {
+export const Gallery = forwardRef(({onDownClick}, ref) => {
   return (
     <Container id="gallery" ref={ref}>
         <FirstRow>

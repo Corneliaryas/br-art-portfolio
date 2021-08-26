@@ -18,7 +18,6 @@ export const Hero = forwardRef(({onDownClick}, ref)  => {
 })
 const Container = styled.div`
 width: 70%;
-/* position: relative; */
 display: flex;
 justify-content: space-evenly;
 flex-direction: column;
@@ -39,15 +38,6 @@ position: relative;
 width: 100%;
 z-index:1;
 `
-// const Title = styled.h1`
-// font-size: 120px;
-// font-weight: 200;
-// margin: 5px;
-// @media screen and (max-width: 768px) {
-//     font-size: 90px;
-//     margin-top: 80px;
-//   }
-// `
 
 const Title = styled.h2`
 font-size: 150px;
@@ -114,4 +104,5 @@ const Symbol = styled.img`
 width: 80px;
 height: 80px;
 z-index: 1;
-opacity: 0.8;`
+opacity: 0.8;
+cursor: pointer;`
