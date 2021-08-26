@@ -1,6 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { forwardRef, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Link, NavLink } from 'react-router-dom';
+import { NavHashLink } from 'react-router-hash-link';
+// use it just like a RRv4/5 <NavLink> (see RRv4/5 api for details)
+// it will be active only if both the path and hash fragment match
+
 
 import { HamburgerMenu } from './HamburgerMenu';
 
@@ -19,12 +23,15 @@ export const Header = () => {
   return (
     <HeaderContainer scrolled={scrolled} showMenu={showMenu}>
       <Wrapper>
-        <StyledLink to="/" onClick={() => setShowMenu(false)}>Birgitta Ryås</StyledLink>
+        <StyledLink to="/#" onClick={() => setShowMenu(false)}>Birgitta Ryås</StyledLink>
         <NavContainer active={showMenu}>
-            <HeaderLink to="/" onClick={() =>{ 
-              setShowMenu(false)
-              window.scrollTo(0, 500);
-              }}>Galleri</HeaderLink>
+            <HashHeaderLink
+              to="/#gallery"
+              activeClassName="selected"
+              activeStyle={{ textDecoration: 'underline' }} onClick={() =>{setShowMenu(false)}}
+            >
+              Galleri
+            </HashHeaderLink>
             <HeaderLink to="/contact" onClick={() => setShowMenu(false)}>Kontakt</HeaderLink>
             <HeaderLink to="/about" onClick={() => setShowMenu(false)}>Om mig</HeaderLink>
         </NavContainer>
@@ -61,7 +68,7 @@ align-items: center;
   }
 `
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(NavHashLink)`
 margin:0;
 text-decoration: none;
 font-weight: bold;
@@ -88,6 +95,20 @@ padding 0;
 `
 
 const HeaderLink = styled(NavLink)`
+margin:5px;
+text-decoration: none;
+color: black;
+font-weight: bold;
+@media screen and (max-width: 768px) {
+margin:20px;
+text-decoration: none;
+color: black;
+font-weight: bold;
+font-size: 20px;
+}
+`
+
+const HashHeaderLink = styled(NavHashLink)`
 margin:5px;
 text-decoration: none;
 color: black;

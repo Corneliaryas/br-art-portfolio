@@ -1,18 +1,16 @@
-import React, { useRef } from 'react'
+import React, { forwardRef, useRef } from 'react'
 
 import {Gallery} from 'components/Gallery'
 import {Hero} from 'components/Hero'
 
 
-export const Start = ()  => {
-    const galleryRef = useRef()
-    const handleDownClick = () => {
-        galleryRef.current.scrollIntoView({behavior: 'smooth'});
-    }
+export const Start = forwardRef(({onDownClick}, ref)  => {
+    const galleryRef2 = useRef()
+    
 
     return(<>
-        <Hero onDownClick={handleDownClick}/>
-        <Gallery ref={galleryRef}/>
+        <Hero onDownClick={onDownClick}/>
+        <Gallery ref={ref}/>
         </>
     )
-}
+})

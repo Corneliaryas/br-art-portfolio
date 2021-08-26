@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import styled from 'styled-components'
 import { 
   BrowserRouter as Router,
@@ -13,10 +13,14 @@ import { About } from 'components/About'
 import { Contact } from 'components/Contact'
 
 export const App = () => {
+  const galleryRef = useRef()
+    const handleDownClick = () => {
+        galleryRef.current.scrollIntoView({behavior: 'smooth'});
+    }
   return (
     <Router>
     <Container>
-      <Header />
+      <Header/>
       <Switch>
         <Route path="/paintings/:paintingID" exact>
           <Details />
@@ -28,7 +32,7 @@ export const App = () => {
           <Contact />
         </Route>
         <Route path="/">
-          <Start />
+          <Start ref={galleryRef} onDownClick={handleDownClick}/>
         </Route>
       </Switch>
     </Container>

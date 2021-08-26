@@ -36,29 +36,15 @@ const imageArrD = [
 ]
 
 
-export const Gallery = forwardRef(({onDownClick}, ref) => {
+export const Gallery = forwardRef(({}, ref) => {
   return (
-    <Container ref={ref}>
+    <Container id="gallery" ref={ref}>
         <FirstRow>
       {imageArrD.map((item) => (
         <PaintingLink to={`paintings/${item.id}`}>
           <Painting src={item.source} alt={item.source}/>
         </PaintingLink>
       ))}</FirstRow>
-      {/* <FirstRow>
-      {imageArrB.map((item) => (
-        <PaintingContainer key={item.id}>
-          <Painting src={item.source} alt={item.source}/>
-          { <p>{item.title}</p>}
-        </PaintingContainer>
-      ))}</FirstRow>
-      <FirstRow>
-      {imageArrC.map((item) => (
-        <PaintingContainer key={item.id}>
-          <Painting src={item.source} alt={item.source}/>
-          { <p>{item.title}</p>}
-        </PaintingContainer>
-      ))}</FirstRow> */}
     </Container>
   )
 })
@@ -66,17 +52,14 @@ export const Gallery = forwardRef(({onDownClick}, ref) => {
 const Container = styled.section`
 width: 80%;
 display: flex;
-/* flex-wrap: wrap; */
 justify-content: space-evenly;
 background-color: #fafafa;
-/* margin: 100px 0; */
 @media screen and (max-width: 768px) {
     width:90%;
   }
 `
 const FirstRow = styled.div`
 width: 100%;
-/* max-height: 440px; */
 display: flex;
 flex-wrap: wrap;
 flex-direction: row;
@@ -84,7 +67,6 @@ background-color: #fafafa;
 @media screen and (max-width: 768px) {
   flex-wrap: nowrap;
   flex-direction: column;
-  /* background-color: red; */
   }
 `
 const PaintingLink = styled(Link)`
