@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import styled from 'styled-components'
 
 
-export const Hero = ()  => {
+export const Hero = forwardRef(({onDownClick})  => {
+
     return(
         <Container>
             <TitleContainer>
@@ -11,20 +12,22 @@ export const Hero = ()  => {
             <Sub>Akvarellportfolio</Sub>
             </TitleContainer>
             <HeroImage src="images/paintings/hav_2.jpg" alt="field"/>
+            <Symbol onClick={onDownClick} src="images/Arrow.svg"/>
         </Container>
     );
-}
+})
 const Container = styled.div`
 width: 70%;
-position: relative;
+/* position: relative; */
 display: flex;
-justify-content: flex-end;
+justify-content: space-evenly;
+flex-direction: column;
 align-items: center;
-height: 800px;
+height: 95vh;
 margin-bottom: 20px;
 @media screen and (max-width: 768px) {
     width:100%;
-    height: 85vh;
+    height: 95vh;
     flex-direction: column;
     justify-content: flex-start;
     padding-top: 100px;
@@ -33,7 +36,7 @@ margin-bottom: 20px;
 `
 const TitleContainer = styled.div`
 position: relative;
-width: 90%;
+width: 100%;
 z-index:1;
 `
 // const Title = styled.h1`
@@ -51,6 +54,7 @@ font-size: 150px;
 font-weight: 200;
 margin: 20px 0;
 margin-bottom: 150px;
+color: white;
 @media screen and (max-width: 768px) {
     font-size: 90px;
     margin-top: 80px;
@@ -65,6 +69,7 @@ font-size: 150px;
 font-weight: 200;
 margin: 20px 0;
 text-align: right;
+color: white;
 @media screen and (max-width: 768px) {
     font-size: 90px;
     margin-top: 80px;
@@ -74,10 +79,12 @@ text-align: right;
 `
 
 const Sub = styled.h2`
-font-size: 80px;
-font-weight: 400;
+font-size: 72px;
+font-weight: normal;
 margin: 5px;
-font-family: 'Kalam', cursive;
+font-family: 'Niconne', cursive;
+font-family: 'Cagliostro', sans-serif;
+color: white;
 @media screen and (max-width: 768px) {
     font-size: 40px;
   }
@@ -87,7 +94,7 @@ const HeroImage = styled.img`
 position: absolute;
 top:0;
 right:0;
-width: 66%;
+width: 100%;
 height: 100%;
 z-index:0;
 object-fit: cover;
@@ -102,3 +109,9 @@ overflow: hidden;
     position: absolute;
   }
  `
+
+const Symbol = styled.img`
+width: 80px;
+height: 80px;
+z-index: 1;
+opacity: 0.8;`

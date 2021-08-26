@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Link, NavLink } from 'react-router-dom';
 
@@ -6,12 +6,25 @@ import { HamburgerMenu } from './HamburgerMenu';
 
 export const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(()=> {
+    if (typeof window !== "undefined"){
+      window.addEventListener("scroll", () => 
+      setScrolled(window.pageYOffset > 100)
+      );
+    }
+  },[]);
+
   return (
-    <HeaderContainer>
+    <HeaderContainer scrolled={scrolled} showMenu={showMenu}>
       <Wrapper>
         <StyledLink to="/" onClick={() => setShowMenu(false)}>Birgitta Ryås</StyledLink>
         <NavContainer active={showMenu}>
-            <HeaderLink to="/" onClick={() => setShowMenu(false)}>Galleri</HeaderLink>
+            <HeaderLink to="/" onClick={() =>{ 
+              setShowMenu(false)
+              window.scrollTo(0, 500);
+              }}>Galleri</HeaderLink>
             <HeaderLink to="/contact" onClick={() => setShowMenu(false)}>Kontakt</HeaderLink>
             <HeaderLink to="/about" onClick={() => setShowMenu(false)}>Om mig</HeaderLink>
         </NavContainer>
@@ -22,23 +35,27 @@ export const Header = () => {
 }
 
 const HeaderContainer = styled.header`
-position: relative;
+position: fixed;
 width: 100%;
 height: 60px;
+top:0;
+left:0;
 display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: center;
-background-color: #f5f5f5;
+background-color: ${(props) => (props.scrolled ? "rgba(248, 248, 248, 0.95)" : props.showMenu ? "rgba(248, 248, 248, 0.95)" : "rgba(248, 248, 248, 0)")};
+box-shadow: ${(props) => (props.scrolled ? "5px 5px 15px rgba(0,0,0, 0.1);" : "5px 5px 15px rgba(0,0,0, 0);")};
+z-index:1;
+transition: 0.3s;
 `
 
 const Wrapper = styled.header`
-width: 70%;
+width: 80%;
 display: flex;
 flex-direction: row;
 justify-content: space-between;
 align-items: center;
-background-color: #f5f5f5;
 @media screen and (max-width: 768px) {
     width: 90%;
   }

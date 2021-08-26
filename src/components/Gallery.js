@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
 
@@ -36,9 +36,9 @@ const imageArrD = [
 ]
 
 
-export const Gallery = () => {
+export const Gallery = forwardRef(({onDownClick}, ref) => {
   return (
-    <Container>
+    <Container ref={ref}>
         <FirstRow>
       {imageArrD.map((item) => (
         <PaintingLink to={`paintings/${item.id}`}>
@@ -61,14 +61,15 @@ export const Gallery = () => {
       ))}</FirstRow> */}
     </Container>
   )
-}
+})
 
 const Container = styled.section`
-width: 70%;
+width: 80%;
 display: flex;
 /* flex-wrap: wrap; */
 justify-content: space-evenly;
 background-color: #fafafa;
+/* margin: 100px 0; */
 @media screen and (max-width: 768px) {
     width:90%;
   }
