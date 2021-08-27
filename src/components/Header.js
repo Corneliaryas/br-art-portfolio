@@ -32,8 +32,10 @@ export const Header = () => {
             >
               Galleri
             </HashHeaderLink>
-            <HeaderLink to="/contact" onClick={() => setShowMenu(false)}>Kontakt</HeaderLink>
-            <HeaderLink to="/about" onClick={() => setShowMenu(false)}>Om mig</HeaderLink>
+            <HeaderLink to="/contact" activeClassName="selected"
+              activeStyle={{ textDecoration: 'underline' }} onClick={() => setShowMenu(false)}>Kontakt</HeaderLink>
+            <HeaderLink to="/about" activeClassName="selected"
+              activeStyle={{ textDecoration: 'underline' }} onClick={() => setShowMenu(false)}>Om mig</HeaderLink>
         </NavContainer>
         <HamburgerMenu showMenu={showMenu} setShowMenu={setShowMenu}/>
       </Wrapper>
@@ -53,7 +55,7 @@ justify-content: center;
 align-items: center;
 background-color: ${(props) => (props.scrolled ? "rgba(248, 248, 248, 0.95)" : props.showMenu ? "rgba(248, 248, 248, 0.95)" : "rgba(248, 248, 248, 0)")};
 box-shadow: ${(props) => (props.scrolled ? "5px 5px 15px rgba(0,0,0, 0.1);" : "5px 5px 15px rgba(0,0,0, 0);")};
-z-index:1;
+z-index:2;
 transition: 0.3s;
 `
 

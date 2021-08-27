@@ -2,6 +2,8 @@ import React, { useEffect, useState } from'react'
 import styled from 'styled-components'
 import { useParams } from 'react-router'
 
+import {SmallTitle} from 'components/StyledComponents'
+
 export const Details = () => {
     const params = useParams()
     const paintingID = params.paintingID
@@ -23,9 +25,9 @@ export const Details = () => {
             <>
             <Image src={`../${painting[0].source}`}/>
             <Info>
-                <Title>
+                <SmallTitle>
                      {painting[0].title}
-                </Title>
+                </SmallTitle>
                 <Paragraph>
                     Lite info om målningen här då, kanske teknik, tankar etc. Lite info om målningen här då, kanske teknik, tankar etc. Lite info om målningen här då, kanske teknik, tankar etc.
                     Lite info om målningen här då, kanske teknik, tankar etc.
@@ -72,9 +74,7 @@ justify-content: flex-end;
   margin: 0 10px;
   }`
 
-const Title = styled.h2`
-font-size: 24px;
-font-family: 'Kalam', cursive;`
+
 
 const Price = styled.p`
 font-weight: bold;

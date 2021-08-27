@@ -1,12 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import {SmallTitle} from 'components/StyledComponents'
+
 export const Contact = () => {
     return (
         <Container>
-                <Sub>
+                <SmallTitle>
                     Kontakt
-                </Sub>
+                </SmallTitle>
                 <Paragraph>
                     Intresserad av en målning? Skicka ett mail till bryas @ gmail.com
                 </Paragraph>
@@ -24,11 +26,6 @@ padding: 20px;
   width: 90%;
   }
 `
-
-
-const Sub = styled.h2`
-font-size: 24px;
-font-family: 'Kalam', cursive;`
 
 
 const Paragraph = styled.p`

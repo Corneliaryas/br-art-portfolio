@@ -7,23 +7,26 @@ export const Hero = forwardRef(({onDownClick}, ref)  => {
     return(
         <Container>
             <TitleContainer>
-            <Title>Birgitta</Title>
-            <Title2>Ryås</Title2>
-            <Sub>Akvarellportfolio</Sub>
+            <Sub>Portfolio</Sub>
+              <Title>Birgitta</Title>
+              <Title2>Ryås</Title2>
             </TitleContainer>
+            
             <HeroImage src="images/paintings/hav_2.jpg" alt="field"/>
             <Symbol onClick={onDownClick} src="images/Arrow.svg"/>
         </Container>
     );
 })
 const Container = styled.div`
-width: 70%;
+width: 80%;
 display: flex;
-justify-content: space-evenly;
+justify-content: space-between;
 flex-direction: column;
 align-items: center;
 height: 95vh;
 margin-bottom: 20px;
+padding: 100px 0;
+box-sizing: border-box;
 @media screen and (max-width: 768px) {
     width:100%;
     height: 95vh;
@@ -35,16 +38,16 @@ margin-bottom: 20px;
 `
 const TitleContainer = styled.div`
 position: relative;
-width: 100%;
+width: 40%;
 z-index:1;
 `
 
 const Title = styled.h2`
 font-size: 150px;
-font-weight: 200;
-margin: 20px 0;
+font-weight: 400;
+margin: 10px 0;
 margin-bottom: 150px;
-color: white;
+color: black;
 @media screen and (max-width: 768px) {
     font-size: 90px;
     margin-top: 80px;
@@ -54,12 +57,12 @@ color: white;
 const Title2 = styled.h2`
 position: absolute;
 left: 250px;
-top: 33%;
+bottom:0;
 font-size: 150px;
-font-weight: 200;
+font-weight: 400;
 margin: 20px 0;
 text-align: right;
-color: white;
+color: black;
 @media screen and (max-width: 768px) {
     font-size: 90px;
     margin-top: 80px;
@@ -73,8 +76,9 @@ font-size: 72px;
 font-weight: normal;
 margin: 5px;
 font-family: 'Niconne', cursive;
-font-family: 'Cagliostro', sans-serif;
-color: white;
+/* font-family: 'Cagliostro', sans-serif; */
+color: black;
+z-index: 1;
 @media screen and (max-width: 768px) {
     font-size: 40px;
   }
