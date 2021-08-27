@@ -77,22 +77,5 @@ margin-bottom: 30px;
     font-size: 90px;
   }`
 
-// const Title2 = styled.h2`
-// position: absolute;
-// left: 35%;
-// top: 28%;
-// font-size: 140px;
-// font-weight: 200;
-// margin: 20px 0;
-// text-align: right;
-// `
-
-const Sub = styled.h2`
-font-size: 24px;
-font-family: 'Kalam', cursive;
-margin: 10px 0;
-margin-top: 30px;`
-
-
 const Paragraph = styled.p`
 margin: 5px 0; `
