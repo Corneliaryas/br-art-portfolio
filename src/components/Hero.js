@@ -31,7 +31,8 @@ box-sizing: border-box;
     width:100%;
     height: 95vh;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
+    align-items: center;
     padding-top: 100px;
     box-sizing: border-box;
   }
@@ -40,6 +41,9 @@ const TitleContainer = styled.div`
 position: relative;
 width: 40%;
 z-index:1;
+@media screen and (max-width: 768px) {
+    width:90%;
+  }
 `
 
 const Title = styled.h2`
@@ -50,7 +54,7 @@ margin-bottom: 150px;
 color: black;
 @media screen and (max-width: 768px) {
     font-size: 90px;
-    margin-top: 80px;
+    /* margin-top: 80px; */
     margin-bottom: 100px;
   }`
 
@@ -65,9 +69,9 @@ text-align: right;
 color: black;
 @media screen and (max-width: 768px) {
     font-size: 90px;
-    margin-top: 80px;
+    /* margin-top: 80px; */
     left: 140px;
-    top: 90px;
+    /* top: 90px; */
   }
 `
 
