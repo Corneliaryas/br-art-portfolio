@@ -1,41 +1,33 @@
-import React, {useRef} from 'react'
+import React, { useRef } from 'react'
 import styled from 'styled-components'
-import { 
+import {
   BrowserRouter as Router,
-  Switch,
   Route,
- } from 'react-router-dom'  
+  Routes
+} from 'react-router-dom'
 
-import {Header} from 'components/Header'
-import {Start} from 'components/Start'
-import {Details} from 'components/Details'
+import { Header } from 'components/Header'
+import { Start } from 'components/Start'
+import { Details } from 'components/Details'
 import { About } from 'components/About'
 import { Contact } from 'components/Contact'
 
 export const App = () => {
   const galleryRef = useRef()
-    const handleDownClick = () => {
-        galleryRef.current.scrollIntoView({behavior: 'smooth'});
-    }
+  const handleDownClick = () => {
+    galleryRef.current.scrollIntoView({ behavior: 'smooth' });
+  }
   return (
     <Router>
-    <Container>
-      <Header/>
-      <Switch>
-        <Route path="/paintings/:paintingID" exact>
-          <Details />
-        </Route>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/contact">
-          <Contact />
-        </Route>
-        <Route path="/">
-          <Start ref={galleryRef} onDownClick={handleDownClick}/>
-        </Route>
-      </Switch>
-    </Container>
+      <Container>
+        <Header />
+        <Routes>
+          <Route path="/paintings/:paintingID" exact element={<Details />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />}/>
+          <Route path="/" element={<Start ref={galleryRef} onDownClick={handleDownClick} />}/>
+        </Routes>
+      </Container>
     </Router>
   )
 }
